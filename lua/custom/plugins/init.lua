@@ -6,9 +6,10 @@
 -- Switch windows with tah
 vim.keymap.set('n', '<tab>', '<c-w>w', { desc = 'Next Window' })
 vim.keymap.set('n', '<S-tab>', '<c-w>W', { desc = 'Prev Window' })
+
 -- avoid accidental movement
-vim.keymap.set('n', '<S-Up>', 'k')
-vim.keymap.set('n', '<S-Down>', 'j')
+vim.keymap.set({ 'n', 'v' }, '<S-Up>', 'k')
+vim.keymap.set({ 'n', 'v' }, '<S-Down>', 'j')
 
 -- save with ctrl-s and exit insert mode
 vim.keymap.set('n', '<C-s>', ':update<CR>')
