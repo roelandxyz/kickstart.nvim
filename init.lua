@@ -615,8 +615,15 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
-        --
+        -- ts_ls = {},
+        denols = {
+          cmd = { '/Users/roeland/.deno/bin/deno', 'lsp' },
+          settings = {
+            deno = {
+              unstable = true,
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -756,7 +763,7 @@ require('lazy').setup({
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { autocomplete = false, completeopt = 'menu,menuone,noinsert' },
+        completion = { completeopt = 'menu,menuone,noinsert' },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
