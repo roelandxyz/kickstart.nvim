@@ -537,7 +537,10 @@ require('lazy').setup({
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
+
+          -- Format the current file
+          map('<leader>cf', vim.lsp.buf.format, '[C]ode [F]ormat')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -616,10 +619,13 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
+
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/denols.lua
         denols = {
           cmd = { '/Users/roeland/.deno/bin/deno', 'lsp' },
           settings = {
             deno = {
+              lint = true,
               unstable = true,
             },
           },

@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 
--- Switch windows with tah
+-- Switch windows with tab
 vim.keymap.set('n', '<tab>', '<c-w>w', { desc = 'Next Window' })
 vim.keymap.set('n', '<S-tab>', '<c-w>W', { desc = 'Prev Window' })
 
@@ -21,10 +21,20 @@ return {
   {
     'danymat/neogen',
     config = true,
+    keys = {
+      {
+        '<leader>cn',
+        function()
+          require('neogen').generate()
+        end,
+        desc = 'Generate Annotations (Neogen)',
+      },
+    },
     -- Uncomment next line if you want to follow only stable versions
     -- version = "*"
   },
 
+  -- auto close html tag (with treesitter)
   {
     'windwp/nvim-ts-autotag',
     opts = {},
