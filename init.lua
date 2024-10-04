@@ -145,8 +145,10 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+vim.opt.tabstop = 4
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -620,16 +622,16 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
 
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/denols.lua
-        denols = {
-          cmd = { '/Users/roeland/.deno/bin/deno', 'lsp' },
-          settings = {
-            deno = {
-              lint = true,
-              unstable = true,
-            },
-          },
-        },
+        -- -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/denols.lua
+        -- denols = {
+        --   cmd = { '/Users/roeland/.deno/bin/deno', 'lsp' },
+        --   settings = {
+        --     deno = {
+        --       lint = true,
+        --       unstable = true,
+        --     },
+        --   },
+        -- },
 
         lua_ls = {
           -- cmd = {...},
