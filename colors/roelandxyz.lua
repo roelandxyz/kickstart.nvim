@@ -5,7 +5,7 @@ local colors = {
   keyword_noticeable = 'Honeydew',
   functiondef = 'Thistle',
   normal = 'NvimLightGrey2',
-  documentation = 'MistyRose',
+  documentation = 'NvimLightGrey4',
 }
 
 --- Reset to normal colors
@@ -34,6 +34,7 @@ hi(0, '@keyword.type.javascript', { fg = colors.keyword_noticeable })
 hi(0, '@keyword.function.javascript', { fg = colors.keyword_noticeable })
 hi(0, '@keyword.coroutine.javascript', { fg = colors.keyword_noticeable })
 hi(0, '@lsp.typemod.class.declaration.javascript', { fg = colors.keyword_prominent })
+hi(0, '@lsp.typemod.property.declaration.javascript', { fg = colors.functiondef })
 
 --- Lua
 hi(0, '@comment.documentation.lua', { fg = colors.documentation })
