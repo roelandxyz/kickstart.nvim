@@ -3,9 +3,9 @@ local hi = vim.api.nvim_set_hl
 local colors = {
   keyword_prominent = 'LightBlue',
   keyword_noticeable = 'Thistle',
-  functiondef = 'NvimLightYellow',
+  functiondef = 'Honeydew',
   normal = 'NvimLightGrey2',
-  documentation = 'DarkKhaki',
+  documentation = 'MistyRose',
 }
 
 --- Reset to normal colors
@@ -16,6 +16,11 @@ hi(0, 'String', { fg = colors.normal })
 hi(0, 'Identifier', { fg = colors.normal })
 hi(0, 'Statement', { fg = colors.normal })
 
+-- To find the group names you can use :Inspect on your code
+-- Use :Telescope highlights
+-- Neovim colors (X11 rgb colors)
+-- https://github.com/neovim/neovim/blob/5331f87f6145f705c73c5c23f365cecb9fbc5067/src/nvim/highlight_group.c#L2937
+
 --- Javascript
 hi(0, '@comment.documentation.javascript', { fg = colors.documentation })
 hi(0, '@punctuation.delimiter.jsdoc', { fg = colors.documentation })
@@ -25,15 +30,10 @@ hi(0, '@nospell.jsdoc', { fg = colors.documentation })
 hi(0, '@function.method.javascript', { fg = colors.functiondef })
 hi(0, '@function.javascript', { fg = colors.functiondef })
 hi(0, '@function.tsx', { fg = colors.functiondef })
-hi(0, '@keyword.type.javascript', { fg = colors.keyword_prominent })
-hi(0, '@keyword.function.javascript', { fg = colors.keyword_prominent })
+hi(0, '@keyword.type.javascript', { fg = colors.keyword_noticeable })
+hi(0, '@keyword.function.javascript', { fg = colors.keyword_noticeable })
 hi(0, '@keyword.coroutine.javascript', { fg = colors.keyword_noticeable })
--- hi(0, "@constructor.javascript", { fg = "NvimLightYellow", bold = true })
--- hi(0, "@variable.parameter.javascript", { fg = colors.blue })
--- hi(0, "@keyword.javascript", { fg = colors.emphasized, bold = true })
--- hi(0, "@keyword.conditional.javascript", { fg = colors.green })
--- hi(0, "@keyword.return.javascript", { fg = colors.emphasized, bold = true })
--- hi(0, "@keyword.import.javascript", { fg = colors.emphasized, bold = true })
+hi(0, '@lsp.typemod.class.declaration.javascript', { fg = colors.keyword_prominent })
 
 --- Lua
 hi(0, '@comment.documentation.lua', { fg = colors.documentation })

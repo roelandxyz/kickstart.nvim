@@ -620,7 +620,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
 
         -- -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/configs/denols.lua
         -- denols = {
@@ -850,13 +850,31 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
-      -- vim.cmd.colorscheme 'roelandxyz'
+      --vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'roelandxyz'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
   },
+
+  -- {
+  --   'zenbones-theme/zenbones.nvim',
+  --   -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+  --   -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+  --   -- In Vim, compat mode is turned on as Lush only works in Neovim.
+  --   dependencies = 'rktjmp/lush.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   -- you can set set configuration options here
+  --   -- config = function()
+  --   --     vim.g.zenbones_darken_comments = 45
+  --   --     vim.cmd.colorscheme('zenbones')
+  --   -- end
+  --   init = function()
+  --     vim.cmd.colorscheme 'zenbones'
+  --   end,
+  -- },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
